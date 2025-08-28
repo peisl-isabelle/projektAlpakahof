@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full w-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Schriftart -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-[#4B4136] font-montserrat text-base leading-relaxed m-0 h-full flex flex-col w-full">
+
+    <header>
+        <!-- Navigation, wird dynamisch per components.js geladen -->
+        <div id="navigation-container"></div>
+    </header>
+
+    <main class="text-center flex-1 w-full">
+
+        <!-- Datenschutzerklärung -->
+        <section class="max-w-[900px] mx-auto my-5 p-8 text-left">
+            <h1 class="text-2xl font-bold mb-6">Datenschutzerklärung</h1>
+
+            <p class="text-lg font-medium">Wir nehmen den Schutz Ihrer Daten ernst. Im Folgenden möchten wir Sie über
+                die Verarbeitung Ihrer personenbezogenen Daten informieren.</p>
+
+            <h2 class="text-2xl font-semibold mt-6">1. Verantwortliche Stelle</h2>
+            <p>Max Mustermann<br>
+                Musterstraße 123<br>
+                12345 Musterstadt</p>
+
+            <h2 class="text-2xl font-semibold mt-6">2. Erhebung und Verarbeitung von Daten</h2>
+            <p>Personenbezogene Daten werden nur erhoben, wenn Sie mit uns über das Kontaktformular oder per E-Mail in
+                Kontakt treten.</p>
+
+            <h2 class="text-2xl font-semibold mt-6">3. Rechte der betroffenen Personen</h2>
+            <p>Sie haben das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten sowie das Recht auf
+                Berichtigung, Löschung oder Sperrung dieser Daten.</p>
+
+            <h2 class="text-2xl font-semibold mt-6">4. Kontakt</h2>
+            <p>Für Fragen zum Datenschutz können Sie uns unter der oben genannten Adresse oder per E-Mail kontaktieren.
+            </p>
+        </section>
+
+        <!-- Back-to-Top-Button -->
+        <button id="backToTop"
+            class="hidden fixed bottom-30 md:bottom-16 right-6 bg-[#1E3A5F] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#162C47] transition-opacity duration-300"
+            aria-label="Zurück zum Seitenanfang" title="Zurück zum Seitenanfang">
+            ↑ Zurück nach oben
+        </button>
+
+    </main>
+
+    <!-- Footer, wird dynamisch per components.js geladen -->
+    <div id="footer-container"></div>
+
+
+    <!-- JavaScript-Dateien -->
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/backToTop.js"></script>
+
+</body>
+
+</html>

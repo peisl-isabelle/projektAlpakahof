@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full w-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS für Scroll-Anmiationen -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Schriftart -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-[#4B4136] font-montserrat text-base leading-relaxed m-0 h-full flex flex-col w-full">
+
+    <header>
+        <!-- Navigation wird dynamiisch per components.js geladen -->
+        <div id="navigation-container"></div>
+    </header>
+
+    <main class="text-center flex-1 w-full">
+
+        <!-- Hero-Section -->
+        <div class="relative w-full h-[60vh] bg-cover bg-center bg-no-repeat"
+            style="background-image: url('assets/img/hero.jpg');">
+        </div>
+
+        <!-- Einleitung und Zitat -->
+        <section id="einleitung" aria-label="Einleitung" class="w-[90%] mx-auto my-12 relative">
+
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">
+                Willkommen auf dem Alpakahof Maier. Wo Nachhaltigkeit zu Hause ist.
+            </h2>
+
+            <!-- Text, responsive -->
+            <p class="text-base leading-relaxed text-gray-700 mb-8 text-left">
+                Unser Hof ist mehr als ein Ort – er ist ein Gefühl.<br><br>
+                Seit 100 Jahren leben wir hier unsere Überzeugung: im Einklang mit Natur, Tier und Mensch.
+                Was einst als kleiner Familienbetrieb begann, ist heute ein Biohof mit Haltung –
+                verwurzelt in Tradition, getragen von Gemeinschaft und geführt mit Blick nach vorn.<br><br>
+                Wir möchten dich hier mitnehmen – in unsere Geschichte, unsere Werte und das, was unseren Hof
+                besonders macht.
+            </p>
+
+            <!-- Bild + Zitat für große Bildschirme -->
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12">
+                <!-- Bild -->
+                <div class="rounded-xl overflow-hidden shadow-md lg:max-w-lg">
+                    <img src="assets/img/familie.jpeg" alt="Betreiberfamilie des Alpakahofs"
+                        class="w-full h-auto object-cover">
+                </div>
+
+                <div class="flex items-center lg:pl-4">
+                    <div>
+                        <p class="italic text-gray-800 leading-relaxed">
+                            „Die Erde zu bewahren und den Menschen gute, ehrliche Produkte zu bieten –
+                            das ist unsere Mission. Auf dem Alpakahof geht Nachhaltigkeit Hand in Hand mit familiärer
+                            Tradition.“
+                            <br>– Anna Maier, Betreiberin
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Geschichte als interaktive Timeline -->
+        <section id="geschichte" class="w-[90%] mx-auto my-12 relative" aria-label="Unsere Geschichte">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">Unsere Geschichte</h2>
+
+            <!-- Timeline-Container mit vertikaler Linie -->
+            <div class="relative flex flex-col 
+        md:before:content-[''] md:before:absolute md:before:left-[30px] md:before:top-0 md:before:w-1 md:before:h-full md:before:bg-[#F9F7F1] 
+        lg:before:left-1/2">
+
+                <!-- Timeline Item 1 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row lg:items-center"
+                    data-aos="fade-left">
+
+                    <!-- Punkt auf Timeline-Linie, nur Desktop sichtbar -->
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <!-- Illustration -->
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%+140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/bauernhof.svg" alt="Alpakahof Gründung"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <!-- Text -->
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pr-12 lg:text-right">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">1925</h3>
+                            <p>Der Alpakahof wird von Familie Maier gegründet. Der Hof ist
+                                zunächst ein traditioneller Bauernhof mit Milchkühen und Schafen. Die Familie führt den
+                                Hof mit viel Hingabe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row-reverse lg:items-center"
+                    data-aos="fade-right">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%-140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/biogemuese.svg" alt="Umstellung auf Bio"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pl-12 lg:text-left">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">1980er</h3>
+                            <p>Der Sohn Ludwig kehrt nach seinem Studium der Agrarwissenschaften auf den Hof zurück
+                                und beginnt mit der Umstellung auf ökologische Landwirtschaft. Die Familie beginnt, auf
+                                Bio-Produkte umzuschwenken, um nachhaltiger zu wirtschaften und die Umwelt zu schonen.
+                                Der Hofladen wird eröffnet, in dem erste Bio-Produkte aus eigenem Anbau verkauft werden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row lg:items-center"
+                    data-aos="fade-left">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%+140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/alpaka_anden.svg" alt="Alpakas ziehen ein"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pr-12 lg:text-right">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">1998</h3>
+                            <p>Die Familie beschließt, ihren Hof mit Alpakas zu bereichern, weil Ludwig auf einer Reise
+                                nach Südamerika von den Tieren fasziniert wurde und eine nachhaltige Möglichkeit sah,
+                                die Landwirtschaft weiter zu diversifizieren. Die ersten Alpakas Pablo und Julia ziehen
+                                ein. Sie sind die ersten Tiere ihrer Art in der Region und werden schnell zu einem
+                                Highlight für die Besucher.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row-reverse lg:items-center"
+                    data-aos="fade-right">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%-140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/wolle.svg" alt="Alpaka-Wolle Verarbeitung"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pl-12 lg:text-left">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">2003</h3>
+                            <p>Die Familie beginnt mit der Verarbeitung von Alpaka-Wolle und stellt Filzprodukte, Schals
+                                und Strickwaren her. Es entsteht eine kleine Werkstatt auf dem Hof, in der die Wolle der
+                                Alpakas in liebevoller Handarbeit weiterverarbeitet wird.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row lg:items-center"
+                    data-aos="fade-left">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%+140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/alpakas.svg" alt="Neue Alpakas ziehen ein"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pr-12 lg:text-right">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">2010</h3>
+                            <p>Immer mehr Alpakas ziehen auf dem Hof ein. Die Familie beginnt damit,
+                                Hofführungen anzubieten, um Besucher über die Tiere und ihre nachhaltige Haltung
+                                aufzuklären.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row-reverse lg:items-center"
+                    data-aos="fade-right">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%-140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/cafe.svg" alt="Hofcafé Eröffnung"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pl-12 lg:text-left">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">2015</h3>
+                            <p>Das Hofcafé wird eröffnet, um den Gästen eine gemütliche Atmosphäre zu bieten. Hier gibt
+                                es frische, selbstgemachte Kuchen, Torten und Kaffeespezialitäten aus regionalen
+                                Zutaten. Das Café wird bald zu einem Treffpunkt für alle, die ihren Kaffee und Kuchen
+                                mit Blick auf die Alpakas genießen wollen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row lg:items-center"
+                    data-aos="fade-left">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%+140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/hofladen.svg" alt="Hofladen Erweiterung"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pr-12 lg:text-right">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">2020</h3>
+                            <p>Der Hofladen wird erweitert. Hier gibt es nun Alpaka-Wollprodukte, Käse, Honig, frisches
+                                Gemüse und Spezialitäten aus der Region zu kaufen. So können die Gäste mehr über ihre Herkunft erfahren.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 8 -->
+                <div class="relative mb-12 flex flex-col md:flex-row md:items-start lg:flex-row-reverse lg:items-center"
+                    data-aos="fade-right">
+                    <div class="absolute top-1/2 -translate-y-1/2 
+          md:left-[30.5px] md:-translate-x-1/2 
+          lg:left-1/2 lg:-translate-x-1/2 
+          w-5 h-5 bg-[#AFC1A2] rounded-full z-10 hidden lg:block"></div>
+
+                    <div class="mb-4 md:mb-0 md:absolute md:top-1/2 md:left-[30.5px] md:-translate-x-1/2 md:-translate-y-1/2 
+            lg:left-[calc(50%-140px)] 
+            w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28 
+            flex items-center justify-center z-20">
+                        <img src="assets/illustrations/jubilaeum.svg" alt="100-jähriges Jubiläum"
+                            class="w-full h-full object-contain rounded-full border-4 border-[#AFC1A2] bg-white shadow-lg">
+                    </div>
+
+                    <div class="md:ml-20 md:w-10/12 lg:ml-0 lg:w-5/12 lg:pl-12 lg:text-left">
+                        <div class="bg-[#F9F7F1] p-4 rounded-lg text-left">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">2025</h3>
+                            <p>Der Alpakahof feiert sein 100-jähriges Jubiläum! Wir blicken stolz auf die Geschichte
+                                unseres Hofs zurück. Von den traditionellen Anfängen hin zu einem modernen Biohof mit
+                                Alpakazucht, einem beliebten Hofladen und Café. Der Hof bleibt ein Ort der
+                                Nachhaltigkeit
+                                und des respektvollen Umgangs miteinander und mit der Natur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Familien-Galerie -->
+        <section id="familie" class="w-[90%] mx-auto my-12 relative" aria-label="Unsere Familie">
+
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">Unsere Familie</h2>
+            <p class="mb-6 text-lg md:text-xl text-gray-700 text-left">Lerne die Menschen hinter unserem Hof kennen.</p>
+
+            <div class="relative">
+                <!-- Galerie Wrapper, Mobile: horizontales Scrollen; Desktop Grid-artige Darstellung -->
+                <div id="familie-slider" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth p-4
+                   lg:flex lg:gap-6 lg:overflow-visible lg:snap-none lg:justify-between">
+
+                    <!-- Anna -->
+                    <div class="relative flex-shrink-0 w-[80%] sm:w-[60%] snap-center rounded-xl shadow-lg overflow-hidden
+                        lg:w-[calc(100%/6-1rem)] group">
+
+                        <!-- Bild -->
+                        <img src="assets/img/frau.jpeg" alt="Anna Maier"
+                            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <!-- Overlay mit Infos; Desktop: durch Hover; Mobile: durch Klick -->
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white 
+                    opacity-0 transition-opacity duration-300 
+                    lg:group-hover:opacity-100" onclick="if(window.innerWidth<1024)this.classList.toggle('opacity-0')">
+                            <h3 class="text-xl font-bold">Anna Maier</h3>
+                            <p>Hofbetreiberin – „Der Hof ist mein Lebenswerk.“</p>
+                        </div>
+                    </div>
+
+                    <!-- Peter -->
+                    <div class="relative flex-shrink-0 w-[80%] sm:w-[60%] snap-center rounded-xl shadow-lg overflow-hidden
+                        lg:w-[calc(100%/6-1rem)] group">
+                        <img src="assets/img/mann.jpeg" alt="Peter Maier"
+                            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white 
+                    opacity-0 transition-opacity duration-300
+                    lg:group-hover:opacity-100" onclick="if(window.innerWidth<1024)this.classList.toggle('opacity-0')">
+                            <h3 class="text-xl font-bold">Peter Maier</h3>
+                            <p>Hofbetreiber – „Für mich zählt das Miteinander mit Tier und Natur.“</p>
+                        </div>
+                    </div>
+
+                    <!-- Oma -->
+                    <div class="relative flex-shrink-0 w-[80%] sm:w-[60%] snap-center rounded-xl shadow-lg overflow-hidden
+                        lg:w-[calc(100%/6-1rem)] group">
+                        <img src="assets/img/oma.jpeg" alt="Gerda Maier"
+                            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white 
+                    opacity-0 transition-opacity duration-300
+                    lg:group-hover:opacity-100" onclick="if(window.innerWidth<1024)this.classList.toggle('opacity-0')">
+                            <h3 class="text-xl font-bold">Gerda Maier</h3>
+                            <p>Café und Hofladen – „Ich hüte die Rezepte der Familie.“</p>
+                        </div>
+                    </div>
+
+                    <!-- Opa -->
+                    <div class="relative flex-shrink-0 w-[80%] sm:w-[60%] snap-center rounded-xl shadow-lg overflow-hidden
+                        lg:w-[calc(100%/6-1rem)] group">
+                        <img src="assets/img/opa.jpeg" alt="Ludwig Maier"
+                            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white 
+                    opacity-0 transition-opacity duration-300
+                    lg:group-hover:opacity-100" onclick="if(window.innerWidth<1024)this.classList.toggle('opacity-0')">
+                            <h3 class="text-xl font-bold">Ludwig Maier</h3>
+                            <p>Traditionsträger – „Die Geschichten des Hofs leben weiter.“</p>
+                        </div>
+                    </div>
+
+                    <!-- Lena -->
+                    <div class="relative flex-shrink-0 w-[80%] sm:w-[60%] snap-center rounded-xl shadow-lg overflow-hidden
+                        lg:w-[calc(100%/6-1rem)] group">
+                        <img src="assets/img/tochter.jpeg" alt="Lena Maier"
+                            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white 
+                    opacity-0 transition-opacity duration-300
+                    lg:group-hover:opacity-100" onclick="if(window.innerWidth<1024)this.classList.toggle('opacity-0')">
+                            <h3 class="text-xl font-bold">Lena Maier</h3>
+                            <p>Tierpflege – „Ich helfe schon beim Füttern der Tiere.“</p>
+                        </div>
+                    </div>
+
+                    <!-- Jonas -->
+                    <div class="relative flex-shrink-0 w-[80%] sm:w-[60%] snap-center rounded-xl shadow-lg overflow-hidden
+                        lg:w-[calc(100%/6-1rem)] group">
+                        <img src="assets/img/sohn.jpeg" alt="Jonas Maier"
+                            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white 
+                    opacity-0 transition-opacity duration-300
+                    lg:group-hover:opacity-100" onclick="if(window.innerWidth<1024)this.classList.toggle('opacity-0')">
+                            <h3 class="text-xl font-bold">Jonas Maier</h3>
+                            <p>Tierpflege – „Die Alpakas sind meine besten Freunde.“</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Alpaka Memory -->
+        <section id="memory" class="w-[90%] mx-auto my-12 relative" aria-label="Alpaka Memory">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">
+                Alpaka Memory – Kennst du unsere Tiere?
+            </h2>
+            <p class="mb-6 text-lg md:text-xl text-gray-700 text-left">Teste dein Gedächtnis und lern beim Memory unsere
+                Alpakas kennen!</p>
+
+
+            <!-- Spielfeld-Container -->
+            <div class="w-full max-w-4xl mx-auto">
+                <div id="memory-game" class="grid grid-cols-4 gap-4"></div>
+            </div>
+
+            <!-- Ausgabe des aktuellen Status -->
+            <p id="memory-status" class="mt-6 text-lg font-semibold"></p>
+        </section>
+
+        <!-- Audio-Interview -->
+        <section id="interview" aria-label="Interview" class="w-[90%] mx-auto my-12 relative">
+
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">
+                Interview mit dem Betreiber
+            </h2>
+            <p class="mb-6 text-lg md:text-xl text-gray-700 text-left">Im Interview erzählt dir Peter mehr über seine
+                Leidenschaft für die Tiere, den Hof und ihre Vision für die Zukunft. Erfahre mehr über die Menschen
+                hinter dem Hof und ihre Geschichten!</p>
+
+            <div class="flex justify-center">
+                <div
+                    class="w-full max-w-xl bg-[#AFC1A2] bg-opacity-30 rounded-lg shadow-md p-8 flex flex-col items-center">
+                    <p class="mb-6 text-center">
+                        Hör dir hier unser spannendes Interview an!
+                    </p>
+
+                    <audio controls class="w-full rounded-md"
+                        aria-label="Interview mit dem Betreiber über den Hof und die Alpakas">
+                        <source src="assets/audio/interview.mp3" type="audio/mpeg">
+                        Dein Browser unterstützt das Audio-Tag nicht.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Gewinnspiel -->
+        <section id="gewinnspiel" aria-label="Gewinnspiel" class="w-[90%] mx-auto my-12 relative">
+
+            <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">
+                Mach mit bei unserem Gewinnspiel!
+            </h2>
+            <p class="mb-6 text-lg md:text-xl text-gray-700 text-left">Teste dein Wissen und löse unser Jubiläums-Quiz -
+                am Ende wartet eine kleine Überraschung auf dich!</p>
+
+            <div class="flex justify-center">
+                <div id="quiz" class="w-full max-w-xl bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+                    <!-- Frage per JS eingefügt -->
+                    <div id="question" class="text-lg sm:text-xl font-semibold mb-6 text-center"></div>
+                    <!-- Antwort-Buttons -->
+                    <div id="answers" class="w-full space-y-3"></div>
+                    <!-- Weiter-Button -->
+                    <button onclick="nextQuestion()" aria-label="Nächste Quizfrage anzeigen"
+                        class="mt-6 w-full sm:w-auto px-6 py-3 bg-[#4E6850] text-white rounded-full hover:bg-[#AFC1A2] transition">
+                        Weiter
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt und Social Media -->
+        <section id="kontakt" aria-label="Kontakt und Social Media"
+            class="w-[90%] mx-auto my-12 relative py-12 px-5 border-t border-[#4B4136]">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+                <!-- Kontakt Box -->
+                <div class="kontakt-box">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">Kontakt</h2>
+                    <p class="text-center md:text-left mb-6 text-gray-700">
+                        Hast du Fragen oder möchtest uns etwas mitteilen? Dann schreib uns gerne eine Nachricht!
+                    </p>
+
+                    <!-- Kontaktformular -->
+                    <form class="flex flex-col gap-4" aria-label="Kontaktformular">
+                        <label
+                            class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 font-semibold text-[#4B4136] text-sm">
+                            <span class="md:w-24">Name:</span>
+                            <input type="text" name="name" required aria-required="true"
+                                class="flex-1 p-3 border border-gray-300 rounded-md text-sm">
+                        </label>
+
+                        <label
+                            class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 font-semibold text-[#4B4136] text-sm">
+                            <span class="md:w-24">Email:</span>
+                            <input type="email" name="email" required aria-required="true"
+                                class="flex-1 p-3 border border-gray-300 rounded-md text-sm">
+                        </label>
+
+                        <label
+                            class="flex flex-col md:flex-row md:items-start gap-2 md:gap-4 font-semibold text-[#4B4136] text-sm">
+                            <span class="md:w-24 pt-2">Nachricht:</span>
+                            <textarea name="nachricht" rows="5" required aria-required="true"
+                                class="flex-1 p-3 border border-gray-300 rounded-md text-sm"></textarea>
+                        </label>
+
+                        <!-- Absenden-Button -->
+                        <button type="submit"
+                            class="w-full md:w-auto py-3 px-6 bg-[#4E6850] text-white rounded-full text-lg hover:bg-[#AFC1A2] transition-colors duration-300 mt-4 self-center md:self-start">
+                            Absenden
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Social Media Box -->
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl mb-8 text-left">Social Media</h2>
+                    <p class="mb-6 text-gray-700 md:text-left">Schau auf Instagram oder Facebook vorbei!</p>
+
+                    <div class="flex justify-center gap-6">
+                        <img src="assets/img/instagram.png" alt="Instagram-Logo" class="w-12 h-auto">
+                        <img src="assets/img/facebook.png" alt="Facebook-Logo" class="w-12 h-auto">
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </section>
+
+        <!-- Back-to-Top-Button -->
+        <button id="backToTop"
+            class="hidden fixed bottom-30 md:bottom-16 right-6 bg-[#4E6850] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#AFC1A2] transition-opacity duration-300"
+            aria-label="Zurück zum Seitenanfang" title="Zurück zum Seitenanfang">
+            ↑ Zurück nach oben
+        </button>
+
+    </main>
+
+    <!-- Footer, wird dynamisch per components.js geladen -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript-Dateien -->
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/backToTop.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/galerie.js"></script>
+    <script src="js/memory.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/formular.js"></script>
+
+</body>
+
+</html>

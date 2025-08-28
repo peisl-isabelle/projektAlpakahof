@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full w-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Schriftart -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-[#4B4136] font-montserrat text-base leading-relaxed m-0 h-full flex flex-col w-full">
+
+    <header>
+        <!-- Navigation, wird dynamisch per components.js geladen -->
+        <div id="navigation-container"></div>
+    </header>
+
+    <main class="text-center flex-1 w-full">
+
+        <!-- Impressum -->
+        <section class="max-w-[900px] mx-auto my-5 p-8 text-left">
+            <h1 class="text-3xl font-bold mb-6">Impressum</h1>
+            <p class="text-lg font-medium">Angaben gemäß § 5 TMG:</p>
+            <p>Isabelle Peisl<br>
+                Musterstraße 123<br>
+                12345 Musterstadt</p>
+
+            <h2 class="text-2xl font-semibold mt-6">Kontakt</h2>
+            <p>Telefon: 01234 567890<br>
+                E-Mail: info@example.com</p>
+
+            <h2 class="text-2xl font-semibold mt-6">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>Isabelle Peisl</p>
+        </section>
+
+        <!-- Back-to-Top-Button -->
+        <button id="backToTop"
+            class="hidden fixed bottom-30 md:bottom-16 right-6 bg-[#1E3A5F] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#162C47] transition-opacity duration-300"
+            aria-label="Zurück zum Seitenanfang" title="Zurück zum Seitenanfang">
+            ↑ Zurück nach oben
+        </button>
+    </main>
+
+    <!-- Footer, wird dynamisch per components.js geladen -->
+    <div id="footer-container"></div>
+
+
+    <!-- JavaScript-Dateien -->
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/backToTop.js"></script>
+
+</body>
+
+</html>
